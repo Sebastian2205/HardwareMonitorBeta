@@ -1,0 +1,17 @@
+c:\users\seb\documents\visual studio 2015\Projects\Hw Monitor\Hw Monitor\bin\Debug\Hw Monitor.exe.config
+c:\users\seb\documents\visual studio 2015\Projects\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.csprojResolveAssemblyReference.cache
+c:\users\seb\documents\visual studio 2015\Projects\Hw Monitor\Hw Monitor\obj\Debug\MainWindow.g.cs
+c:\users\seb\documents\visual studio 2015\Projects\Hw Monitor\Hw Monitor\obj\Debug\App.g.cs
+c:\users\seb\documents\visual studio 2015\Projects\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor_MarkupCompile.cache
+c:\users\seb\documents\visual studio 2015\Projects\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor_MarkupCompile.lref
+C:\Users\Seb\Documents\Visual Studio 2015\Projects\Hw Monitor\Hw Monitor\bin\Debug\Hw Monitor.exe
+C:\Users\Seb\Documents\Visual Studio 2015\Projects\Hw Monitor\Hw Monitor\bin\Debug\Hw Monitor.pdb
+C:\Users\Seb\Documents\Visual Studio 2015\Projects\Hw Monitor\Hw Monitor\bin\Debug\MetroFramework.dll
+C:\Users\Seb\Documents\Visual Studio 2015\Projects\Hw Monitor\Hw Monitor\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Seb\Documents\Visual Studio 2015\Projects\Hw Monitor\Hw Monitor\bin\Debug\PerformanceCounterHelper.Installer.exe
+C:\Users\Seb\Documents\Visual Studio 2015\Projects\Hw Monitor\Hw Monitor\obj\Debug\MainWindow.baml
+C:\Users\Seb\Documents\Visual Studio 2015\Projects\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.g.resources
+C:\Users\Seb\Documents\Visual Studio 2015\Projects\Hw Monitor\Hw Monitor\obj\Debug\Hw_Monitor.Properties.Resources.resources
+C:\Users\Seb\Documents\Visual Studio 2015\Projects\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.csproj.GenerateResource.Cache
+C:\Users\Seb\Documents\Visual Studio 2015\Projects\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.exe
+C:\Users\Seb\Documents\Visual Studio 2015\Projects\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.pdb
