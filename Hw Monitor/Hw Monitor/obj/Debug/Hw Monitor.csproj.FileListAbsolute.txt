@@ -67,3 +67,6 @@ C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\De
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.csproj.CoreCompileInputs.cache
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.exe
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.pdb
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\Aga.Controls.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\OxyPlot.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\OxyPlot.WindowsForms.dll
