@@ -23,8 +23,6 @@ namespace Hw_Monitor
     public partial class MainWindow : Window
     {
         Computer thisComputer = new Computer();
-
-
         DispatcherTimer timer = new DispatcherTimer();
         PointPairList list_cpuLoad = new PointPairList();
         PointPairList list_ram = new PointPairList();
@@ -63,8 +61,7 @@ namespace Hw_Monitor
             zedgraph_disk.GraphPane.YAxis.Title.Text = "Durchsatz";
             zedgraph_disk.GraphPane.CurveList.Clear();
             list_disk.Clear();
-
-            //Allgémein
+        
             zedgraph.GraphPane.XAxis.Title.Text = "Zeit";
             zedgraph.GraphPane.YAxis.Title.Text = "Durchsatz";
             zedgraph.GraphPane.CurveList.Clear();
@@ -212,7 +209,7 @@ namespace Hw_Monitor
             textBox_ramInfo.Text = string_ramData;
             textBox_diskInfo.Text = string_diskLoad;
 
-            //Prozessorauslastung
+            //Alle 60s wird der Graph gelöscht und beginnt bei 0
             if (x_time == 60)
             {
                 //CPU

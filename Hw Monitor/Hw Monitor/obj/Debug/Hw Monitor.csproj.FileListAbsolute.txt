@@ -38,8 +38,6 @@ C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\De
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\MetroFramework.dll
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\PerformanceCounterHelper.Installer.exe
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\ZedGraph.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\ZedGraph.Web.dll
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\ZedGraph.xml
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\ZedGraph.Web.xml
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\de\ZedGraph.resources.dll
@@ -67,6 +65,3 @@ C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\De
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.csproj.CoreCompileInputs.cache
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.exe
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.pdb
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\Aga.Controls.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\OxyPlot.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\OxyPlot.WindowsForms.dll
