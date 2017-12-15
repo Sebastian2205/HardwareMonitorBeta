@@ -29,8 +29,8 @@ namespace Hw_Monitor
         PointPairList list_cpuLoad = new PointPairList();
         PointPairList list_ram = new PointPairList();
         PointPairList list_disk = new PointPairList();
-        double tmp_ram = 0.0, tmp_disk = 0.0, tmp_cpuLoad = 0.0;
-        int tmp_cpuTemp = 0, x_time = 0;
+        double ram_Data = 0.0, disk_Data = 0.0, cpu_Load = 0.0;
+        int cpu_Temp = 0, x_time = 0;
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -84,8 +84,8 @@ namespace Hw_Monitor
 
         private void button_click(object sender, RoutedEventArgs e)
         {
-            Button btn = (Button)sender;
-            String temp = btn.Tag.ToString();
+            Button button = (Button)sender;
+            String temp = button.Tag.ToString();
             if (temp == "Cpu")
             {
 
@@ -123,10 +123,10 @@ namespace Hw_Monitor
         public void timer_Tick(object sender, EventArgs e)
         {
             
-            String temp = "";
-            String temp2 = "";
-            String temp3 = "";
-            String usage = "";
+            String string_cpuLoad = "";
+            String string_ramData = "";
+            String string_diskLoad = "";
+            String string_cpuTemp = "";
 
             foreach (var hardwareItem in thisComputer.Hardware)
             {
@@ -142,9 +142,9 @@ namespace Hw_Monitor
 
                         if (sensor.SensorType == SensorType.Temperature)
                         {
-                            tmp_cpuTemp = (int)sensor.Value.Value;
-                            usage += String.Format("{0} Temperature = {1} °C\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
-                            if (tmp_cpuTemp >= 65)
+                            cpu_Temp = (int)sensor.Value.Value;
+                            string_cpuTemp += String.Format("{0} Temperature = {1} °C\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
+                            if (cpu_Temp >= 65)
                             {
                                 Button_cpu.Background = Brushes.IndianRed;
                             }
@@ -152,8 +152,8 @@ namespace Hw_Monitor
 
                         if (sensor.SensorType == SensorType.Load)
                         {
-                            tmp_cpuLoad = (double)sensor.Value.Value;
-                            temp += String.Format("{0} Load = {1}\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
+                            cpu_Load = (double)sensor.Value.Value;
+                            string_cpuLoad += String.Format("{0} Load = {1}\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
                         }
 
                     }
@@ -175,8 +175,8 @@ namespace Hw_Monitor
 
                         if (sensor.SensorType == SensorType.Data)
                         {
-                            tmp_ram = (double)sensor.Value.Value;
-                            temp2 += String.Format("{0} Ram = {1}\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
+                            ram_Data = (double)sensor.Value.Value;
+                            string_ramData += String.Format("{0} Ram = {1}\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
                         }
 
                     }
@@ -199,8 +199,8 @@ namespace Hw_Monitor
 
                         if (sensor.SensorType == SensorType.Load)
                         {
-                            tmp_disk = (double)sensor.Value.Value;
-                            temp3 += String.Format("{0} HDD = {1}\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
+                            disk_Data = (double)sensor.Value.Value;
+                            string_diskLoad += String.Format("{0} HDD = {1}\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
                         }
 
                     }
@@ -208,9 +208,9 @@ namespace Hw_Monitor
 
             }
             //Hardware Informationen
-            textBox_cpuInfo.Text = temp + "\n" + usage;
-            textBox_ramInfo.Text = temp2;
-            textBox_diskInfo.Text = temp3;
+            textBox_cpuInfo.Text = string_cpuLoad + "\n" + string_cpuTemp;
+            textBox_ramInfo.Text = string_ramData;
+            textBox_diskInfo.Text = string_diskLoad;
 
             //Prozessorauslastung
             if (x_time == 60)
@@ -236,9 +236,9 @@ namespace Hw_Monitor
             x_time++;
 
             //X und Y Werte List übergeben
-            list_cpuLoad.Add(x_time, tmp_cpuLoad);
-            list_ram.Add(x_time, tmp_ram);
-            list_disk.Add(x_time, tmp_disk);
+            list_cpuLoad.Add(x_time, cpu_Load);
+            list_ram.Add(x_time, ram_Data);
+            list_disk.Add(x_time, disk_Data);
 
             //Graph zeichnen
             LineItem myCurve_cpu = zedgraph_cpu.GraphPane.AddCurve("", list_cpuLoad, System.Drawing.Color.Red, SymbolType.None);
