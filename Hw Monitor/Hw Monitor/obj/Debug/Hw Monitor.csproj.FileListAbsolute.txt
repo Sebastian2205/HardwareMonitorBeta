@@ -32,3 +32,38 @@ C:\Users\Seb\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debu
 C:\Users\Seb\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.g.resources
 C:\Users\Seb\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw_Monitor.Properties.Resources.resources
 C:\Users\Seb\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.csproj.GenerateResource.Cache
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\Hw Monitor.exe.config
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\Hw Monitor.exe
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\Hw Monitor.pdb
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\MetroFramework.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\PerformanceCounterHelper.Installer.exe
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\ZedGraph.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\ZedGraph.Web.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\ZedGraph.xml
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\ZedGraph.Web.xml
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.csprojResolveAssemblyReference.cache
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\MainWindow.g.cs
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\App.g.cs
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor_MarkupCompile.cache
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor_MarkupCompile.lref
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\MainWindow.baml
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.g.resources
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw_Monitor.Properties.Resources.resources
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.csproj.GenerateResource.Cache
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.csproj.CoreCompileInputs.cache
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.exe
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.pdb
