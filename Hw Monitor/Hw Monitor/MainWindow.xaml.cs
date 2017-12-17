@@ -61,10 +61,6 @@ namespace Hw_Monitor
             zedgraph_disk.GraphPane.YAxis.Title.Text = "Durchsatz";
             zedgraph_disk.GraphPane.CurveList.Clear();
             list_disk.Clear();
-        
-            zedgraph.GraphPane.XAxis.Title.Text = "Zeit";
-            zedgraph.GraphPane.YAxis.Title.Text = "Durchsatz";
-            zedgraph.GraphPane.CurveList.Clear();
 
             zedgraph_cpuMini.GraphPane.XAxis.Title.Text = "Zeit";
             zedgraph_cpuMini.GraphPane.YAxis.Title.Text = "Durchsatz";
@@ -85,13 +81,11 @@ namespace Hw_Monitor
             String temp = button.Tag.ToString();
             if (temp == "Cpu")
             {
-
                 textBox_ramInfo.Visibility = Visibility.Hidden;
                 textBox_diskInfo.Visibility = Visibility.Hidden;
                 textBox_cpuInfo.Visibility = Visibility.Visible;
                 Zed_cpu.Visibility = Visibility.Visible;
-                Zed_ram.Visibility = Visibility.Hidden;
-                Zed.Visibility = Visibility.Hidden;
+                Zed_ram.Visibility = Visibility.Hidden;               
                 Zed_disk.Visibility = Visibility.Hidden;
 
             }
@@ -101,8 +95,7 @@ namespace Hw_Monitor
                 textBox_diskInfo.Visibility = Visibility.Hidden;
                 textBox_ramInfo.Visibility = Visibility.Visible;
                 Zed_ram.Visibility = Visibility.Visible;
-                Zed_cpu.Visibility = Visibility.Hidden;
-                Zed.Visibility = Visibility.Hidden;
+                Zed_cpu.Visibility = Visibility.Hidden;                
                 Zed_disk.Visibility = Visibility.Hidden;
             }
             if (temp == "Disk")
@@ -111,20 +104,17 @@ namespace Hw_Monitor
                 textBox_cpuInfo.Visibility = Visibility.Hidden;
                 textBox_diskInfo.Visibility = Visibility.Visible;
                 Zed_cpu.Visibility = Visibility.Hidden;
-                Zed_ram.Visibility = Visibility.Hidden;
-                Zed.Visibility = Visibility.Hidden;
+                Zed_ram.Visibility = Visibility.Hidden;               
                 Zed_disk.Visibility = Visibility.Visible;
             }
         }
 
         public void timer_Tick(object sender, EventArgs e)
-        {
-            
+        {           
             String string_cpuLoad = "";
             String string_ramData = "";
             String string_diskLoad = "";
             String string_cpuTemp = "";
-
             foreach (var hardwareItem in thisComputer.Hardware)
             {
                 if (hardwareItem.HardwareType == HardwareType.CPU)
@@ -132,11 +122,8 @@ namespace Hw_Monitor
                     hardwareItem.Update();
                     foreach (IHardware subHardware in hardwareItem.SubHardware)
                         subHardware.Update();
-
                     foreach (var sensor in hardwareItem.Sensors)
                     {
-
-
                         if (sensor.SensorType == SensorType.Temperature)
                         {
                             cpu_Temp = (int)sensor.Value.Value;
@@ -146,7 +133,6 @@ namespace Hw_Monitor
                                 Button_cpu.Background = Brushes.IndianRed;
                             }
                         }
-
                         if (sensor.SensorType == SensorType.Load)
                         {
                             cpu_Load = (double)sensor.Value.Value;
@@ -155,21 +141,13 @@ namespace Hw_Monitor
 
                     }
                 }
-
-            }
-
-            foreach (var hardwareItem in thisComputer.Hardware)
-            {
-                if (hardwareItem.HardwareType == HardwareType.RAM)
+                else if (hardwareItem.HardwareType == HardwareType.RAM)
                 {
                     hardwareItem.Update();
                     foreach (IHardware subHardware in hardwareItem.SubHardware)
                         subHardware.Update();
-
                     foreach (var sensor in hardwareItem.Sensors)
                     {
-
-
                         if (sensor.SensorType == SensorType.Data)
                         {
                             ram_Data = (double)sensor.Value.Value;
@@ -178,22 +156,13 @@ namespace Hw_Monitor
 
                     }
                 }
-
-            }
-
-
-            foreach (var hardwareItem in thisComputer.Hardware)
-            {
-                if (hardwareItem.HardwareType == HardwareType.HDD)
+               else if (hardwareItem.HardwareType == HardwareType.HDD)
                 {
                     hardwareItem.Update();
                     foreach (IHardware subHardware in hardwareItem.SubHardware)
                         subHardware.Update();
-
                     foreach (var sensor in hardwareItem.Sensors)
                     {
-
-
                         if (sensor.SensorType == SensorType.Load)
                         {
                             disk_Data = (double)sensor.Value.Value;
@@ -218,8 +187,7 @@ namespace Hw_Monitor
                 list_cpuLoad.Clear();
 
                 //Ram
-                zedgraph_ram.GraphPane.CurveList.Clear();
-                zedgraph.GraphPane.CurveList.Clear();
+                zedgraph_ram.GraphPane.CurveList.Clear();             
                 zedgraph_ramMini.GraphPane.CurveList.Clear();
                 list_ram.Clear();
 
@@ -249,12 +217,7 @@ namespace Hw_Monitor
             LineItem myCurve_disk = zedgraph_disk.GraphPane.AddCurve("", list_disk, System.Drawing.Color.Green, SymbolType.None);
             zedgraph_disk.AxisChange();
             zedgraph_disk.Refresh();
-
-            LineItem myCurve = zedgraph.GraphPane.AddCurve("", list_cpuLoad, System.Drawing.Color.Red, SymbolType.None);
-            LineItem myCurve2 = zedgraph.GraphPane.AddCurve("", list_ram, System.Drawing.Color.Blue, SymbolType.None);
-            zedgraph.AxisChange();
-            zedgraph.Refresh();
-
+               
             LineItem myCurve_cpuMini = zedgraph_cpuMini.GraphPane.AddCurve("", list_cpuLoad, System.Drawing.Color.Red, SymbolType.None);
             zedgraph_cpuMini.AxisChange();
             zedgraph_cpuMini.Refresh();
@@ -267,8 +230,6 @@ namespace Hw_Monitor
             zedgraph_diskMini.AxisChange();
             zedgraph_diskMini.Refresh();
         }
-
-
     }
 }
 
