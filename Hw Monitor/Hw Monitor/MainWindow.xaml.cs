@@ -105,28 +105,25 @@ namespace Hw_Monitor
             String string_ramData = "";
             String string_diskLoad = "";
             String string_cpuTemp = "";
+            String string_InfoCpu = "";
+            String string_InfoRam = "";
+            String string_InfoDisk = "";
+
             foreach (var hardwareItem in thisComputer.Hardware)
             {
                 if (hardwareItem.HardwareType == HardwareType.CPU)
                 {
                     hardwareItem.Update();
+                    string_InfoCpu = hardwareItem.Name;
                     foreach (IHardware subHardware in hardwareItem.SubHardware)
                         subHardware.Update();
                     foreach (var sensor in hardwareItem.Sensors)
-                    {
+                    {                      
                         if (sensor.SensorType == SensorType.Temperature)
                         {
                             cpu_Temp = (int)sensor.Value.Value;
                             string_cpuTemp += String.Format("{0} Temperature = {1} °C\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
-                            
-                            if (cpu_Temp >= 65)
-                            {
-                                Button_cpu.Background = Brushes.IndianRed;                             
-                            }
-                            else
-                            {
-                                Button_cpu.Background = Brushes.White;  
-                            }                         
+                            cpuTempDanger();
                         }
                         if (sensor.SensorType == SensorType.Load)
                         {
@@ -136,26 +133,29 @@ namespace Hw_Monitor
                     }
                 }
                 else if (hardwareItem.HardwareType == HardwareType.RAM)
-                {
+                {                 
                     hardwareItem.Update();
+                    string_InfoRam = hardwareItem.Name;
                     foreach (IHardware subHardware in hardwareItem.SubHardware)
                         subHardware.Update();
                     foreach (var sensor in hardwareItem.Sensors)
                     {
-                        if (sensor.SensorType == SensorType.Data)
+                        
+                        if (sensor.SensorType == SensorType.Load)
                         {
                             ram_Data = (double)sensor.Value.Value;
                             string_ramData += String.Format("{0} Ram = {1}\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
-                        }
+                        }                      
                     }
                 }
-               else if (hardwareItem.HardwareType == HardwareType.HDD)
+                else if (hardwareItem.HardwareType == HardwareType.HDD)
                 {
                     hardwareItem.Update();
+                    string_InfoDisk = hardwareItem.Name;                 
                     foreach (IHardware subHardware in hardwareItem.SubHardware)
                         subHardware.Update();
                     foreach (var sensor in hardwareItem.Sensors)
-                    {
+                    {                       
                         if (sensor.SensorType == SensorType.Load)
                         {
                             disk_Data = (double)sensor.Value.Value;
@@ -163,13 +163,14 @@ namespace Hw_Monitor
                         }
 
                     }
-                }
+                }               
 
             }
             //Hardware Informationen
-            textBox_cpuInfo.Text = string_cpuLoad + "\n" + string_cpuTemp;
-            textBox_ramInfo.Text = string_ramData;
-            textBox_diskInfo.Text = string_diskLoad;
+            textBox_cpuInfo.Text = string_InfoCpu + ":\n" + string_cpuLoad + "\n" + string_cpuTemp;
+            textBox_ramInfo.Text = string_InfoRam + ":\n" + string_ramData;
+            textBox_diskInfo.Text = string_InfoDisk + ":\n" + string_diskLoad;
+            
 
             //Alle 60s wird der Graph gelöscht und beginnt bei 0
             if (x_time == 60)
@@ -238,6 +239,18 @@ namespace Hw_Monitor
             list_disk.Clear();
 
             x_time = 0;
+        }
+
+        public void cpuTempDanger()
+        {
+            if (cpu_Temp >= 65)
+            {
+                Button_cpu.Background = Brushes.IndianRed;
+            }
+            else
+            {
+                Button_cpu.Background = Brushes.White;
+            }
         }
     }
 }

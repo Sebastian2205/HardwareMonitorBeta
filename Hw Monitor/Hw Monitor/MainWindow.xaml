@@ -49,7 +49,6 @@
         <TextBox x:Name="textBox_cpuInfo" BorderThickness="0" Visibility="Visible" HorizontalAlignment="Right" Height="200" Margin="0,0,20,20"  TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="500"/>
         <TextBox x:Name="textBox_ramInfo" BorderThickness="0" Visibility="Hidden" HorizontalAlignment="Right" Height="200" Margin="0,0,20,20" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="500"/>
         <TextBox x:Name="textBox_diskInfo" BorderThickness="0" Visibility="Hidden" HorizontalAlignment="Right" Height="200" Margin="0,0,20,20" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="500"/>
-
         <WindowsFormsHost x:Name="Zed_cpu" Visibility="Visible" HorizontalAlignment="Right" Height="300" Margin="0,20,20,0" VerticalAlignment="Top" Width="500">
             <!-- das ist das Control ZedGraph (dll) zu den Referenzen dazunehmen -->
             <zed:ZedGraphControl x:Name="zedgraph_cpu" Width="500" Height="200" />
