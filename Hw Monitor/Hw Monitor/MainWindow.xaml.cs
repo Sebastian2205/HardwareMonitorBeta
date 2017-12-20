@@ -78,33 +78,23 @@ namespace Hw_Monitor
         private void button_click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
-            String temp = button.Tag.ToString();
-            if (temp == "Cpu")
-            {
-                textBox_ramInfo.Visibility = Visibility.Hidden;
-                textBox_diskInfo.Visibility = Visibility.Hidden;
-                textBox_cpuInfo.Visibility = Visibility.Visible;
-                Zed_cpu.Visibility = Visibility.Visible;
-                Zed_ram.Visibility = Visibility.Hidden;               
-                Zed_disk.Visibility = Visibility.Hidden;
+            String choose = button.Tag.ToString();
 
+            graphHidden();
+
+            if (choose == "Cpu")
+            {             
+                textBox_cpuInfo.Visibility = Visibility.Visible;
+                Zed_cpu.Visibility = Visibility.Visible;              
             }
-            if (temp == "Ram")
-            {
-                textBox_cpuInfo.Visibility = Visibility.Hidden;
-                textBox_diskInfo.Visibility = Visibility.Hidden;
+            if (choose == "Ram")
+            {               
                 textBox_ramInfo.Visibility = Visibility.Visible;
                 Zed_ram.Visibility = Visibility.Visible;
-                Zed_cpu.Visibility = Visibility.Hidden;                
-                Zed_disk.Visibility = Visibility.Hidden;
             }
-            if (temp == "Disk")
-            {
-                textBox_ramInfo.Visibility = Visibility.Hidden;
-                textBox_cpuInfo.Visibility = Visibility.Hidden;
-                textBox_diskInfo.Visibility = Visibility.Visible;
-                Zed_cpu.Visibility = Visibility.Hidden;
-                Zed_ram.Visibility = Visibility.Hidden;               
+            if (choose == "Disk")
+            {                
+                textBox_diskInfo.Visibility = Visibility.Visible;              
                 Zed_disk.Visibility = Visibility.Visible;
             }
         }
@@ -128,17 +118,21 @@ namespace Hw_Monitor
                         {
                             cpu_Temp = (int)sensor.Value.Value;
                             string_cpuTemp += String.Format("{0} Temperature = {1} °C\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
+                            
                             if (cpu_Temp >= 65)
                             {
-                                Button_cpu.Background = Brushes.IndianRed;
+                                Button_cpu.Background = Brushes.IndianRed;                             
                             }
+                            else
+                            {
+                                Button_cpu.Background = Brushes.White;  
+                            }                         
                         }
                         if (sensor.SensorType == SensorType.Load)
                         {
                             cpu_Load = (double)sensor.Value.Value;
                             string_cpuLoad += String.Format("{0} Load = {1}\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
                         }
-
                     }
                 }
                 else if (hardwareItem.HardwareType == HardwareType.RAM)
@@ -153,7 +147,6 @@ namespace Hw_Monitor
                             ram_Data = (double)sensor.Value.Value;
                             string_ramData += String.Format("{0} Ram = {1}\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
                         }
-
                     }
                 }
                else if (hardwareItem.HardwareType == HardwareType.HDD)
@@ -181,22 +174,7 @@ namespace Hw_Monitor
             //Alle 60s wird der Graph gelöscht und beginnt bei 0
             if (x_time == 60)
             {
-                //CPU
-                zedgraph_cpu.GraphPane.CurveList.Clear();
-                zedgraph_cpuMini.GraphPane.CurveList.Clear();
-                list_cpuLoad.Clear();
-
-                //Ram
-                zedgraph_ram.GraphPane.CurveList.Clear();             
-                zedgraph_ramMini.GraphPane.CurveList.Clear();
-                list_ram.Clear();
-
-                //Disk 
-                zedgraph_disk.GraphPane.CurveList.Clear();
-                zedgraph_diskMini.GraphPane.CurveList.Clear();
-                list_disk.Clear();
-
-                x_time = 0;
+                clearGraph();
             }
             x_time++;
 
@@ -229,6 +207,37 @@ namespace Hw_Monitor
             LineItem myCurve_diskMini = zedgraph_diskMini.GraphPane.AddCurve("", list_disk, System.Drawing.Color.Green, SymbolType.None);
             zedgraph_diskMini.AxisChange();
             zedgraph_diskMini.Refresh();
+
+           
+        }
+        public void graphHidden()
+        {
+            textBox_ramInfo.Visibility = Visibility.Hidden;
+            textBox_cpuInfo.Visibility = Visibility.Hidden;
+            textBox_diskInfo.Visibility = Visibility.Hidden;
+            Zed_cpu.Visibility = Visibility.Hidden;
+            Zed_ram.Visibility = Visibility.Hidden;
+            Zed_disk.Visibility = Visibility.Hidden;
+        }
+
+        public void clearGraph()
+        {
+            //CPU
+            zedgraph_cpu.GraphPane.CurveList.Clear();
+            zedgraph_cpuMini.GraphPane.CurveList.Clear();
+            list_cpuLoad.Clear();
+
+            //Ram
+            zedgraph_ram.GraphPane.CurveList.Clear();
+            zedgraph_ramMini.GraphPane.CurveList.Clear();
+            list_ram.Clear();
+
+            //Disk 
+            zedgraph_disk.GraphPane.CurveList.Clear();
+            zedgraph_diskMini.GraphPane.CurveList.Clear();
+            list_disk.Clear();
+
+            x_time = 0;
         }
     }
 }
