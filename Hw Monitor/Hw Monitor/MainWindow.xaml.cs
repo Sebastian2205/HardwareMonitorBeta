@@ -141,7 +141,7 @@ namespace Hw_Monitor
                     foreach (var sensor in hardwareItem.Sensors)
                     {
                         
-                        if (sensor.SensorType == SensorType.Load)
+                        if (sensor.SensorType == SensorType.Data)
                         {
                             ram_Data = (double)sensor.Value.Value;
                             string_ramData += String.Format("{0} Ram = {1}\r\n", sensor.Name, sensor.Value.HasValue ? sensor.Value.Value.ToString() : "no value");
