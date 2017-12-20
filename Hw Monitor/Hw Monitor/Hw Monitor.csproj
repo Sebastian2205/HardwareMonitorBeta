@@ -39,7 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aga.Controls">
-      <HintPath>..\External\Aga.Controls.dll</HintPath>
+      <HintPath>bin\Debug\Aga.Controls.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
@@ -58,10 +58,10 @@
       <HintPath>bin\Debug\OpenHardwareMonitorLib.dll</HintPath>
     </Reference>
     <Reference Include="OxyPlot">
-      <HintPath>..\External\OxyPlot.dll</HintPath>
+      <HintPath>bin\Debug\OxyPlot.dll</HintPath>
     </Reference>
     <Reference Include="OxyPlot.WindowsForms">
-      <HintPath>..\External\OxyPlot.WindowsForms.dll</HintPath>
+      <HintPath>bin\Debug\OxyPlot.WindowsForms.dll</HintPath>
     </Reference>
     <Reference Include="PerformanceCounterHelper.Installer, Version=1.3.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\PerformanceCounterHelper.Installer.1.3.0.2\lib\net40\PerformanceCounterHelper.Installer.exe</HintPath>
