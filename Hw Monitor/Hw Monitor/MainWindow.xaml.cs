@@ -56,7 +56,7 @@ namespace Hw_Monitor
         public MainWindow()
         {
             
-            InitializeComponent();           
+            InitializeComponent();          
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += timer_Tick;
             timer.Start();
@@ -84,7 +84,7 @@ namespace Hw_Monitor
             zedgraph_disk.GraphPane.CurveList.Clear();
             list_disk.Clear();
 
-            zedgraph_cpu.GraphPane.Title.Text = "Netzwerkverkehr";
+            zedgraph_network.GraphPane.Title.Text = "Netzwerkverkehr";
             zedgraph_network.GraphPane.XAxis.Title.Text = "Zeit";
             zedgraph_network.GraphPane.YAxis.Title.Text = "Bytes/s";
             zedgraph_network.GraphPane.CurveList.Clear();
@@ -145,18 +145,23 @@ namespace Hw_Monitor
             String string_InfoCpu = "";
             String string_InfoRam = "";
             String string_InfoDisk = "";
+            String string_NetworkStatus = "";
+            String string_MacAddress = "";
+            String string_Username = "";
 
-            // networkData();     
+            string_Username = Environment.UserName;
 
             foreach (var networkItem in NetworkInterface.GetAllNetworkInterfaces())
             {
                 string_Network = networkItem.Description.ToString();
-                String string_NetworkTmp = networkItem.OperationalStatus.ToString();
+                string_MacAddress = networkItem.GetPhysicalAddress().ToString();
+                string_NetworkStatus = networkItem.OperationalStatus.ToString();
 
-                if (string_NetworkTmp == "Down")
+                if (string_NetworkStatus == "Down")
                 {
-                    string_NetworkTmp = "";
+                    string_NetworkStatus = "";
                     string_Network = "";
+                    string_MacAddress = "";
                 }
                 else
                 {
@@ -230,11 +235,20 @@ namespace Hw_Monitor
 
             }
             //Hardware Informationen
-            textBox_cpuInfo.Text = string_InfoCpu + ":\n" + string_cpuLoad + "\n" + string_cpuTemp;
-            textBox_ramInfo.Text = string_InfoRam + ":\n" + string_ramData;
-            textBox_diskInfo.Text = string_InfoDisk + ":\n" + string_diskLoad;
-            textBox_networkInfo.Text = string_Network + "\n" + network_Data.ToString();
-            textBox_networkAllInformation.Text = "\b Netzwerkkarte:  " + string_Network + "\n" + network_Data.ToString();
+            textBox_cpuInfo.Text = "Prozessor: " + string_InfoCpu + "\n" + 
+                                    string_cpuTemp + "\n" + 
+                                    "Prozessortemperatur" + "\n" +                                   
+                                    string_cpuLoad;
+            textBox_ramInfo.Text = "Arbeitsspeicher: " + string_InfoRam + "\n" + 
+                                    string_ramData;
+            textBox_diskInfo.Text = "Festplatte: " + "\n" + string_InfoDisk + "\n" + 
+                                    string_diskLoad;
+            textBox_networkInfo.Text = "Netzwerkarte: " + string_Network + "\n" + 
+                                       "Empfangene Bytes/s:   " + network_Data.ToString();
+            textBox_networkAllInformation.Text = "Benutzername:    " + string_Username + "\n" +
+                                                 "Netzwerkkarte:   " + string_Network + "\n" +
+                                                 "Netzwerkstatus:  " + string_NetworkStatus + "\n" +
+                                                 "Mac-Adresse      " + string_MacAddress;
 
             //Alle 60s wird der Graph gelöscht und beginnt bei 0
             if (x_time == 60)
@@ -250,8 +264,7 @@ namespace Hw_Monitor
             list_network.Add(x_time, network_Data);
 
             //Graph zeichnen
-            DrawGraph();
-           
+            DrawGraph();    
         }
         public void graphHidden()
         {
@@ -266,15 +279,9 @@ namespace Hw_Monitor
         }
 
         public void graphVisible()
-        {
-            textBox_ramInfo.Visibility = Visibility.Visible;
-            textBox_cpuInfo.Visibility = Visibility.Visible;
-            textBox_diskInfo.Visibility = Visibility.Visible;
-            textBox_networkInfo.Visibility = Visibility.Visible;
+        {          
+            textBox_cpuInfo.Visibility = Visibility.Visible;         
             Zed_cpu.Visibility = Visibility.Visible;
-            Zed_ram.Visibility = Visibility.Visible;
-            Zed_disk.Visibility = Visibility.Visible;
-            Zed_network.Visibility = Visibility.Visible;
         }
 
         public void clearGraph()
