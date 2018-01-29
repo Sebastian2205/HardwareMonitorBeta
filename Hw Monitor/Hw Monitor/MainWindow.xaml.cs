@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using System.Windows.Threading;
+using System.Net.NetworkInformation;
 using OpenHardwareMonitor.Hardware;
 using ZedGraph;
 
@@ -27,52 +28,83 @@ namespace Hw_Monitor
         PointPairList list_cpuLoad = new PointPairList();
         PointPairList list_ram = new PointPairList();
         PointPairList list_disk = new PointPairList();
+        PointPairList list_network = new PointPairList();
+        PerformanceCounter network = new PerformanceCounter();
         double ram_Data = 0.0, disk_Data = 0.0, cpu_Load = 0.0;
-        int cpu_Temp = 0, x_time = 0;
+        int cpu_Temp = 0, x_time = 0, network_Data = 0;
+        String string_Network = "";
+      
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+            MenuItem menuItem = (MenuItem)sender;
+            String choose = menuItem.Tag.ToString();
+            if(choose == "ansicht")
+            {
+                Grid_Button.Visibility = Visibility.Visible;
+                GridInformation.Visibility = Visibility.Hidden;
+                graphVisible();
+            }
+            if(choose == "information")
+            {
+                GridInformation.Visibility = Visibility.Visible;
+                Grid_Button.Visibility = Visibility.Hidden;
+                graphHidden();
+            }
         }
-
+        
         public MainWindow()
         {
-            InitializeComponent();
+            
+            InitializeComponent();           
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += timer_Tick;
             timer.Start();
-
+   
             thisComputer.CPUEnabled = true;
             thisComputer.Open();
             thisComputer.RAMEnabled = true;
             thisComputer.HDDEnabled = true;
 
+            zedgraph_cpu.GraphPane.Title.Text = "Prozessor";
             zedgraph_cpu.GraphPane.XAxis.Title.Text = "Zeit";
             zedgraph_cpu.GraphPane.YAxis.Title.Text = "Auslastung in %";
             zedgraph_cpu.GraphPane.CurveList.Clear();
             list_cpuLoad.Clear();
 
+            zedgraph_ram.GraphPane.Title.Text = "Arbeitsspeicher";
             zedgraph_ram.GraphPane.XAxis.Title.Text = "Zeit";
             zedgraph_ram.GraphPane.YAxis.Title.Text = "Durchsatz";
             zedgraph_ram.GraphPane.CurveList.Clear();
             list_ram.Clear();
 
+            zedgraph_disk.GraphPane.Title.Text = "Datenträger";
             zedgraph_disk.GraphPane.XAxis.Title.Text = "Zeit";
             zedgraph_disk.GraphPane.YAxis.Title.Text = "Durchsatz";
             zedgraph_disk.GraphPane.CurveList.Clear();
             list_disk.Clear();
 
-            zedgraph_cpuMini.GraphPane.XAxis.Title.Text = "Zeit";
-            zedgraph_cpuMini.GraphPane.YAxis.Title.Text = "Durchsatz";
+            zedgraph_cpu.GraphPane.Title.Text = "Netzwerkverkehr";
+            zedgraph_network.GraphPane.XAxis.Title.Text = "Zeit";
+            zedgraph_network.GraphPane.YAxis.Title.Text = "Bytes/s";
+            zedgraph_network.GraphPane.CurveList.Clear();
+            list_network.Clear();
+
+            zedgraph_cpuMini.GraphPane.XAxis.Title.Text = "";
+            zedgraph_cpuMini.GraphPane.YAxis.Title.Text = "";
             zedgraph_cpuMini.GraphPane.CurveList.Clear();
 
-            zedgraph_ramMini.GraphPane.XAxis.Title.Text = "Zeit";
-            zedgraph_ramMini.GraphPane.YAxis.Title.Text = "Durchsatz";
+            zedgraph_ramMini.GraphPane.XAxis.Title.Text = "";
+            zedgraph_ramMini.GraphPane.YAxis.Title.Text = "";
             zedgraph_ramMini.GraphPane.CurveList.Clear();
 
-            zedgraph_diskMini.GraphPane.XAxis.Title.Text = "Zeit";
-            zedgraph_diskMini.GraphPane.YAxis.Title.Text = "Durchsatz";
+            zedgraph_diskMini.GraphPane.XAxis.Title.Text = "";
+            zedgraph_diskMini.GraphPane.YAxis.Title.Text = "";
             zedgraph_diskMini.GraphPane.CurveList.Clear();
+
+            zedgraph_networkMini.GraphPane.XAxis.Title.Text = "";
+            zedgraph_networkMini.GraphPane.YAxis.Title.Text = "";
+            zedgraph_networkMini.GraphPane.CurveList.Clear();
         }
 
         private void button_click(object sender, RoutedEventArgs e)
@@ -97,6 +129,11 @@ namespace Hw_Monitor
                 textBox_diskInfo.Visibility = Visibility.Visible;              
                 Zed_disk.Visibility = Visibility.Visible;
             }
+            if (choose == "Network")
+            {
+                textBox_networkInfo.Visibility = Visibility.Visible;
+                Zed_network.Visibility = Visibility.Visible;
+            }
         }
 
         public void timer_Tick(object sender, EventArgs e)
@@ -108,6 +145,32 @@ namespace Hw_Monitor
             String string_InfoCpu = "";
             String string_InfoRam = "";
             String string_InfoDisk = "";
+
+            // networkData();     
+
+            foreach (var networkItem in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                string_Network = networkItem.Description.ToString();
+                String string_NetworkTmp = networkItem.OperationalStatus.ToString();
+
+                if (string_NetworkTmp == "Down")
+                {
+                    string_NetworkTmp = "";
+                    string_Network = "";
+                }
+                else
+                {
+                    string_Network = string_Network.Replace("(", "[").Replace(")", "]");
+                    break;
+                }
+            }
+
+            network.CategoryName = "Netzwerkschnittstelle";
+            network.CounterName = "Gesamtanzahl Bytes/s";
+            network.InstanceName = string_Network;
+            network_Data = (int)network.NextValue();
+            
+
 
             foreach (var hardwareItem in thisComputer.Hardware)
             {
@@ -170,7 +233,8 @@ namespace Hw_Monitor
             textBox_cpuInfo.Text = string_InfoCpu + ":\n" + string_cpuLoad + "\n" + string_cpuTemp;
             textBox_ramInfo.Text = string_InfoRam + ":\n" + string_ramData;
             textBox_diskInfo.Text = string_InfoDisk + ":\n" + string_diskLoad;
-            
+            textBox_networkInfo.Text = string_Network + "\n" + network_Data.ToString();
+            textBox_networkAllInformation.Text = "\b Netzwerkkarte:  " + string_Network + "\n" + network_Data.ToString();
 
             //Alle 60s wird der Graph gelöscht und beginnt bei 0
             if (x_time == 60)
@@ -183,32 +247,10 @@ namespace Hw_Monitor
             list_cpuLoad.Add(x_time, cpu_Load);
             list_ram.Add(x_time, ram_Data);
             list_disk.Add(x_time, disk_Data);
+            list_network.Add(x_time, network_Data);
 
             //Graph zeichnen
-            LineItem myCurve_cpu = zedgraph_cpu.GraphPane.AddCurve("", list_cpuLoad, System.Drawing.Color.Red, SymbolType.None);
-            zedgraph_cpu.AxisChange();
-            zedgraph_cpu.Refresh();
-
-            LineItem myCurve_ram = zedgraph_ram.GraphPane.AddCurve("", list_ram, System.Drawing.Color.Blue, SymbolType.None);
-            zedgraph_ram.AxisChange();
-            zedgraph_ram.Refresh();
-
-            LineItem myCurve_disk = zedgraph_disk.GraphPane.AddCurve("", list_disk, System.Drawing.Color.Green, SymbolType.None);
-            zedgraph_disk.AxisChange();
-            zedgraph_disk.Refresh();
-               
-            LineItem myCurve_cpuMini = zedgraph_cpuMini.GraphPane.AddCurve("", list_cpuLoad, System.Drawing.Color.Red, SymbolType.None);
-            zedgraph_cpuMini.AxisChange();
-            zedgraph_cpuMini.Refresh();
-
-            LineItem myCurve_ramMini = zedgraph_ramMini.GraphPane.AddCurve("", list_ram, System.Drawing.Color.Blue, SymbolType.None);
-            zedgraph_ramMini.AxisChange();
-            zedgraph_ramMini.Refresh();
-
-            LineItem myCurve_diskMini = zedgraph_diskMini.GraphPane.AddCurve("", list_disk, System.Drawing.Color.Green, SymbolType.None);
-            zedgraph_diskMini.AxisChange();
-            zedgraph_diskMini.Refresh();
-
+            DrawGraph();
            
         }
         public void graphHidden()
@@ -216,9 +258,23 @@ namespace Hw_Monitor
             textBox_ramInfo.Visibility = Visibility.Hidden;
             textBox_cpuInfo.Visibility = Visibility.Hidden;
             textBox_diskInfo.Visibility = Visibility.Hidden;
+            textBox_networkInfo.Visibility = Visibility.Hidden;
             Zed_cpu.Visibility = Visibility.Hidden;
             Zed_ram.Visibility = Visibility.Hidden;
             Zed_disk.Visibility = Visibility.Hidden;
+            Zed_network.Visibility = Visibility.Hidden;
+        }
+
+        public void graphVisible()
+        {
+            textBox_ramInfo.Visibility = Visibility.Visible;
+            textBox_cpuInfo.Visibility = Visibility.Visible;
+            textBox_diskInfo.Visibility = Visibility.Visible;
+            textBox_networkInfo.Visibility = Visibility.Visible;
+            Zed_cpu.Visibility = Visibility.Visible;
+            Zed_ram.Visibility = Visibility.Visible;
+            Zed_disk.Visibility = Visibility.Visible;
+            Zed_network.Visibility = Visibility.Visible;
         }
 
         public void clearGraph()
@@ -238,6 +294,11 @@ namespace Hw_Monitor
             zedgraph_diskMini.GraphPane.CurveList.Clear();
             list_disk.Clear();
 
+            //Network
+            zedgraph_network.GraphPane.CurveList.Clear();
+            zedgraph_networkMini.GraphPane.CurveList.Clear();
+            list_network.Clear();
+           
             x_time = 0;
         }
 
@@ -252,6 +313,42 @@ namespace Hw_Monitor
                 Button_cpu.Background = Brushes.White;
             }
         }
+
+        public void DrawGraph()
+        {
+            LineItem myCurve_cpu = zedgraph_cpu.GraphPane.AddCurve("", list_cpuLoad, System.Drawing.Color.Blue, SymbolType.None);
+            zedgraph_cpu.AxisChange();
+            zedgraph_cpu.Refresh();
+
+            LineItem myCurve_ram = zedgraph_ram.GraphPane.AddCurve("", list_ram, System.Drawing.Color.DarkRed, SymbolType.None);
+            zedgraph_ram.AxisChange();
+            zedgraph_ram.Refresh();
+
+            LineItem myCurve_disk = zedgraph_disk.GraphPane.AddCurve("", list_disk, System.Drawing.Color.Green, SymbolType.None);
+            zedgraph_disk.AxisChange();
+            zedgraph_disk.Refresh();
+
+            LineItem myCurve_network = zedgraph_network.GraphPane.AddCurve("", list_network, System.Drawing.Color.DarkOrange, SymbolType.None);
+            zedgraph_network.AxisChange();
+            zedgraph_network.Refresh();
+
+            LineItem myCurve_cpuMini = zedgraph_cpuMini.GraphPane.AddCurve("", list_cpuLoad, System.Drawing.Color.Blue, SymbolType.None);
+            zedgraph_cpuMini.AxisChange();
+            zedgraph_cpuMini.Refresh();
+
+            LineItem myCurve_ramMini = zedgraph_ramMini.GraphPane.AddCurve("", list_ram, System.Drawing.Color.DarkRed, SymbolType.None);
+            zedgraph_ramMini.AxisChange();
+            zedgraph_ramMini.Refresh();
+
+            LineItem myCurve_diskMini = zedgraph_diskMini.GraphPane.AddCurve("", list_disk, System.Drawing.Color.Green, SymbolType.None);
+            zedgraph_diskMini.AxisChange();
+            zedgraph_diskMini.Refresh();
+
+            LineItem myCurve_networkMini = zedgraph_networkMini.GraphPane.AddCurve("", list_network, System.Drawing.Color.DarkOrange, SymbolType.None);
+            zedgraph_networkMini.AxisChange();
+            zedgraph_networkMini.Refresh();
+        }
+
     }
 }
 

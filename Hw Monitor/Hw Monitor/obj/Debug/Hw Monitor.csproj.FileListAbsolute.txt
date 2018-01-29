@@ -65,55 +65,9 @@ C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\De
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.csproj.CoreCompileInputs.cache
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.exe
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.pdb
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\Aga.Controls.1.7.0.0.Fakes.fakesconfig
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\de\Microsoft.QualityTools.Testing.Fakes.resources.dll
 C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Hw Monitor.csprojFakesResolveAssemblyReference.cache
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\Accessibility.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\Aga.Controls.1.7.0.0.Fakes.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\Aga.Controls.1.7.0.0.Fakes.fakesconfig
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\Aga.Controls.1.7.0.0.Fakes.pdb
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\Aga.Controls.1.7.0.0.Fakes.xml
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\Aga.Controls.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\de\Microsoft.QualityTools.Testing.Fakes.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\de\ZedGraph.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\es\ZedGraph.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\fr\ZedGraph.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\hu\ZedGraph.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\it\ZedGraph.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\ja\ZedGraph.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\MetroFramework.Design.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\MetroFramework.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\MetroFramework.Fonts.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\Microsoft.QualityTools.Testing.Fakes.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\OpenHardwareMonitorLib.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\OxyPlot.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\OxyPlot.WindowsForms.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\PerformanceCounterHelper.Installer.exe
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\pt\ZedGraph.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\ru\ZedGraph.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\sk\ZedGraph.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\sv\ZedGraph.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\tr\ZedGraph.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\ZedGraph.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\ZedGraph.Web.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\ZedGraph.Web.xml
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\ZedGraph.xml
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\zh-cn\ZedGraph.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\b\zh-tw\ZedGraph.resources.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\f.ah
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\f.ch
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\f.cs
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\f.csproj
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\f.fakes
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\f.fakesconfig
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\o\Aga.Controls.1.7.0.0.Fakes.dll
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\o\Aga.Controls.1.7.0.0.Fakes.pdb
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\o\f.csproj.CopyComplete
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\o\f.csproj.CoreCompileInputs.cache
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\o\f.csproj.FileListAbsolute.txt
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\o\f.csprojResolveAssemblyReference.cache
-C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\fakes.args
 C:\Users\Seb\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\Aga.Controls.1.7.0.0.Fakes.fakesconfig
 C:\Users\Seb\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\Aga.Controls.dll
 C:\Users\Seb\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
@@ -181,3 +135,8 @@ C:\Users\Seb\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debu
 C:\Users\Seb\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\o\f.csproj.FileListAbsolute.txt
 C:\Users\Seb\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\ac\o\f.csprojResolveAssemblyReference.cache
 C:\Users\Seb\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\obj\Debug\Fakes\fakes.args
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\Aga.Controls.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\OxyPlot.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\OxyPlot.WindowsForms.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\ZedGraph.dll
+C:\Users\Chuck\Documents\GitHub\HardwareMonitorBeta\Hw Monitor\Hw Monitor\bin\Debug\ZedGraph.Web.dll
